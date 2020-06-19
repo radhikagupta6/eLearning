@@ -1,0 +1,24 @@
+
+{% extends 'includes/main.html' %}
+
+<!--extend is used for including a file having all the styles to all the files-->
+{% block body %}
+<div class="container">
+    <div class="login-box">
+
+        <h1 class="text-center">LOGIN </h1>
+        <h3 style="color:red" class="text-center"> {{errr}}</h3>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div class="form-group">
+        <input type="submit" class="btn btn-success" placeholder="Email" value="Login">
+
+    </div>
+    <div class=""> Forget Password?</div>
+    <a href="#" class="btn btn-info" > Create New Account</a>
+
+    </div>
+</div>
+</form>
+{% endblock %}
