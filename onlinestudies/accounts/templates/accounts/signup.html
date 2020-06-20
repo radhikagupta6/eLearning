@@ -6,16 +6,18 @@
 <div class="container">
     <div class="login-box">
 
-        <h1 class="text-center">LOGIN </h1>
+        <h1 class="text-center">Create New Account</h1>
         <h3 style="color:red" class="text-center"> {{errr}}</h3>
 <form method="post">
     {% csrf_token %}
     {{form.as_p}}
     <div class="form-group">
-        <input type="submit" class="btn btn-success" placeholder="Email" value="Login">
+        <input type="submit" class="btn btn-success" placeholder="Email" value="Signup">
+
     </div>
-    <div class=""> Forget Password?</div>
-    <a href="{% url 'signup'%}" class="btn btn-info" > Create New Account</a>
+    <div class="">I have an account already ! </div>
+    <a href="{% url 'login' %}" class="btn btn-info" > Login </a>
+
     </div>
 </div>
 </form>

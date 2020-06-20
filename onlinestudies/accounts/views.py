@@ -44,3 +44,27 @@ def dashboard(request):
 def logout_view(request):
     del request.session['uemail']
     return redirect('login')
+
+
+from .forms import SignupForm
+from django.contrib.auth.models import User
+
+
+def signup_view(request):
+    form = SignupForm(request.POST or None)
+    if form.is_valid():
+        username = form.cleaned_data.get('username')
+        email = form.cleaned_data.get('email')
+        password = form.cleaned_data.get('password')
+        print(username, email, password)
+        user = User.objects.create_user(username=username, password=password, email=email)
+        if user:
+            print(user)
+            user.first_name = "unknown"
+            user.save()
+        else:
+            print("something error")
+    context = {
+        'form': form
+    }
+    return render(request, 'accounts/signup.html', context)
