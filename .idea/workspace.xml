@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbdfd96c-793f-40fd-a343-247b2809bc87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/templates/includes/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/templates/includes/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestudies/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestudies/home/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/home/templates/home/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

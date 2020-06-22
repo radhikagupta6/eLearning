@@ -48,6 +48,7 @@ def logout_view(request):
 
 from .forms import SignupForm
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
 def signup_view(request):
@@ -62,6 +63,7 @@ def signup_view(request):
             print(user)
             user.first_name = "unknown"
             user.save()
+            messages.add_message(request, messages.INFO, f'User {username} Created Successfully')
         else:
             print("something error")
     context = {
