@@ -1,8 +1,11 @@
 from django import forms
 
+from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+
 
 class LoginForm(forms.Form):
-    email = forms.EmailField()
+    username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
 
     def __init__(self, *args, **kwargs):
@@ -11,17 +14,20 @@ class LoginForm(forms.Form):
             visible.field.widget.attrs['class'] = 'form-control'
 
 
-from django.contrib.auth.models import User
-
-
 class SignupForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'password')
 
-    # username = forms.CharField(max_length=50)
-    # email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(max_length=20, help_text="")
+    password = forms.CharField(widget=forms.PasswordInput, max_length=20, min_length=8)
+
+    # def clean_username(self):
+    #     username = self.cleaned_data.get('username')
+    #     if len(username) < 5:
+    #         print('hhh')
+    #         raise ValidationError('There must be at least two valid inline items')
+    #     return username
 
     def __init__(self, *args, **kwargs):
         super(SignupForm, self).__init__(*args, **kwargs)

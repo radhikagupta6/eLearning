@@ -1,4 +1,3 @@
-
 {% extends 'includes/main.html' %}
 
 <!--extend is used for including a file having all the styles to all the files-->
@@ -7,16 +6,27 @@
     <div class="login-box">
 
         <h1 class="text-center">Create New Account</h1>
-        <h3 style="color:red" class="text-center"> {{errr}}</h3>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <div class="form-group">
-        <input type="submit" class="btn btn-success" placeholder="Email" value="Signup">
+        <h4 style="color:red" class="text-center mx-auto"> {% if messages %}
+            <ul class="messages text-center" style="list-style-type:none;" >
+                {% for message in messages %}
+                <li
+                {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </h4>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" placeholder="Email" value="Signup">
 
-    </div>
-    <div class="">I have an account already ! </div>
-    <a href="{% url 'login' %}" class="btn btn-info" > Login </a>
+            </div>
+            <div class="">I have an account already !</div>
+            <a href="{% url 'login' %}" class="btn btn-info"> Login </a>
 
     </div>
 </div>

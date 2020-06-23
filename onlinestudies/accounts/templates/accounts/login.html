@@ -7,7 +7,13 @@
     <div class="login-box">
 
         <h1 class="text-center">LOGIN </h1>
-        <h3 style="color:red" class="text-center"> {{errr}}</h3>
+        <h3 style="color:red" class="text-center">{% if messages %}
+<ul class="messages" style="list-style-type:none;>
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}</h3>
 <form method="post">
     {% csrf_token %}
     {{form.as_p}}

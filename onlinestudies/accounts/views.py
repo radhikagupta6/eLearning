@@ -1,4 +1,9 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+from .forms import SignupForm
+from django.contrib.auth.models import User
+from django.contrib import messages
 
 # Create your views here.
 from .forms import LoginForm
@@ -7,48 +12,40 @@ users = {'email': 'a@gmail.com', 'pass': '1234', 'username': 'Ram'}
 
 
 def login_view(request):
-    if request.session.get('uemail'):
+    if request.user.is_authenticated:
         return redirect("dashboard")
-    errr = ""
     form = LoginForm(request.POST or None)
     if form.is_valid():
-        email = form.cleaned_data.get('email')
+        username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
-        print(email, password)
-        if users['email'] == email and users['pass'] == password:
-            print("Login Successful")
-            request.session['uemail'] = email
+        print(username, password)
+        # if users['email'] == email and users['pass'] == password:
+        #     print("Login Successful")
+        #     request.session['uemail'] = email
+        user = authenticate(request, username= username, password=password)
+        if user:
+            login(request, user)  # this also creates the session
             return redirect('dashboard')
         else:
-            errr = 'Email or Password is Incorrect !'
+            messages.add_message(request, messages.INFO, 'Username or password incorrect')
 
     context = {
         'form': form,
-        'errr': errr
     }
     return render(request, 'accounts/login.html', context)
 
 
 def dashboard(request):
-    if not request.session.get('uemail'):
+    if not request.user.is_authenticated:
         return redirect('login')
     context = dict()
-    uemail = request.session.get('uemail')
-    print(uemail)
-    context = {
-        'uemail': uemail
-    }
     return render(request, 'accounts/dashboard.html', context)
 
 
 def logout_view(request):
-    del request.session['uemail']
+    logout(request)
+    # del request.session['uemail']
     return redirect('login')
-
-
-from .forms import SignupForm
-from django.contrib.auth.models import User
-from django.contrib import messages
 
 
 def signup_view(request):
@@ -60,9 +57,10 @@ def signup_view(request):
         print(username, email, password)
         user = User.objects.create_user(username=username, password=password, email=email)
         if user:
-            print(user)
+
             user.first_name = "unknown"
             user.save()
+            login(request, user)
             messages.add_message(request, messages.INFO, f'User {username} Created Successfully')
         else:
             print("something error")
