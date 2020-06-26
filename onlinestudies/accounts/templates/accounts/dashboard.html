@@ -2,9 +2,13 @@
 
 <!--extend is used for including a file having all the styles to all the files-->
 {% block body %}
+
 <div class="container">
     <div class="jumbotron bg-primary text-white m-3">
     <h1>Welcome to Online Studies...{{user}} <a href="{% url 'logout'%}" class="btn btn-danger">Logout</a></h1>
+    {{student.name}}
+        Mobile: {{student.mobile}}
+    <img src="{{student.image.url}}" width="200px">
     </div>
-    </div>
+</div>
 {% endblock %}

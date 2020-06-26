@@ -1,84 +1,63 @@
-
-{% extends 'includes/main.html' %}
-{% block body %}
-<body data-gr-c-s-loaded="true">
-
-
-
-
-
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <h5 class="my-0 mr-md-auto font-weight-normal text-primary">Online Studies</h5>
+{% extends 'includes/main.html'%}
+{% block body%}
+{% load static %}
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+  <h5 class="my-0 mr-md-auto font-weight-normal text-primary"><strong>Online Studies</strong></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="#">Features</a>
         <a class="p-2 text-dark" href="#">Enterprise</a>
         <a class="p-2 text-dark" href="#">Support</a>
         <a class="p-2 text-dark" href="#">Pricing</a>
       </nav>
-        <a class="btn btn-outline-success mr-2" href="{% url 'login'%}">Login </a>
-      <a class="btn btn-outline-info" href="{% url 'signup' %}">Sign up</a>
-
+      <a class="btn btn-outline-success mr-2" href="{% url 'login'%}">Login </a>
+      <a class="btn btn-outline-primary" href="{% url 'signup'%}">Sign up</a>
     </div>
 
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Courses</h1>
-      <p class="lead">Here are some very useful and effective courses which can be used for self learning and self enhancement.</p>
+    <div class="container-div">
+      <img src="{% static 'images/b.jpg'%}" width="100%">
+      </div>
+
+    <div class="container-div">
+      <div class="m-4 p-4">
+            <h2 class="text-dark"> The world's largest selection of courses</h2>
+            <p class="text-dark"> Maltipal Langage</p>
+            </div>
     </div>
 
-    <div class="container">
-      <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Free</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>10 users included</li>
-              <li>2 GB of storage</li>
-              <li>Email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
-          </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Pro</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>20 users included</li>
-              <li>10 GB of storage</li>
-              <li>Priority email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
-          </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Enterprise</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+<div class="album py-5 bg-light">
+        <div class="container-div">
+          <div class="row">
+            {% for course in "courses1"%}
+            <div class="col-md-3">
+              <div class="card m-4 box-shadow b-sh">
+                <img src="{% static 'images/python.png'%}" width="100%">
+                <div class="card-body">
+                  <h2 class="card-text"><strong>Python</strong></h2>
+                  <p class="card-text"><small>This content is a little bit longer.</small></p>
+                  <span class="text-primary mr-2"><strong >₹462</strong></span><span><s><span>₹9,600</span></s></span>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn  btn-primary mt-4 font-weight-bold">Join</button>
+
+                    </div>
+
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor%}
           </div>
         </div>
       </div>
 
+
+
       <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
           <div class="col-12 col-md">
-            <img class="mb-2" src="" alt="" width="24" height="24">
-            <small class="d-block mb-3 text-muted">© 2017-2018</small>
+<!--            <img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">-->
+            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
           </div>
           <div class="col-6 col-md">
             <h5>Features</h5>
@@ -112,6 +91,4 @@
         </div>
       </footer>
     </div>
-
-</body>
-{% endblock %}
+{% endblock%}

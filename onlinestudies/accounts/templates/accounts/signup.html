@@ -2,7 +2,18 @@
 
 <!--extend is used for including a file having all the styles to all the files-->
 {% block body %}
-<div class="container">
+{% load static %}
+<style>
+body{
+    background-image: url({% static 'images/back.png' %});
+    height: 800px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+</style>
+<div class="container-fluid">
     <div class="login-box">
 
         <h1 class="text-center">Create New Account</h1>

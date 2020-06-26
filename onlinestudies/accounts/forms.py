@@ -1,5 +1,5 @@
 from django import forms
-
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
@@ -14,13 +14,14 @@ class LoginForm(forms.Form):
             visible.field.widget.attrs['class'] = 'form-control'
 
 
-class SignupForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ('username', 'email', 'password')
+class SignupForm(UserCreationForm):
+    # class Meta:
+    #     model = User
+    #     fields = ('username', 'email', 'password')
 
     username = forms.CharField(max_length=20, help_text="")
-    password = forms.CharField(widget=forms.PasswordInput, max_length=20, min_length=8)
+    email = forms.EmailField()
+    password1 = forms.CharField(label='New Password', widget=forms.PasswordInput, max_length=20, min_length=8)
 
     # def clean_username(self):
     #     username = self.cleaned_data.get('username')
