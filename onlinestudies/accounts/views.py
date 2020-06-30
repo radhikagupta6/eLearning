@@ -2,11 +2,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignupForm
+
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import StudentProfile
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 # Create your views here.
-from .forms import LoginForm
+from .forms import LoginForm, StudentProfileForm
+
 
 users = {'email': 'a@gmail.com', 'pass': '1234', 'username': 'Ram'}
 
@@ -38,19 +42,21 @@ def dashboard(request):
     if not request.user.is_authenticated:
         return redirect('login')
     print(request.user)
-    student = StudentProfile.objects.get(user= request.user)
+    student = StudentProfile.objects.get(user=request.user)
     context['student'] = student
     return render(request, 'accounts/dashboard.html', context)
 
 
 def logout_view(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     logout(request)
     return redirect('login')
 
 
 def signup_view(request):
-    # if request.user.is_authenticated:
-    #     return redirect('dashboard')
+    if request.user.is_authenticated:
+        return redirect('dashboard')
     form = SignupForm(request.POST or None)
     if form.is_valid():
         username = form.cleaned_data.get('username')
@@ -73,3 +79,47 @@ def signup_view(request):
         'form': form
     }
     return render(request, 'accounts/signup.html', context)
+
+
+def profile_view(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    student = StudentProfile.objects.get(user=request.user)
+    context = {
+        'student': student
+    }
+    return render(request, 'accounts/profile.html', context)
+
+
+def profile_edit(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    student = StudentProfile.objects.get(user=request.user)
+    form = StudentProfileForm(request.POST or None,  request.FILES or None, instance= student)
+    if form.is_valid():
+        form.save()
+        messages.add_message(request, messages.INFO, f' Updated Successfully !')
+        return redirect('dashboard')
+    context = {
+        'form': form
+    }
+    return render(request, 'accounts/edit_profile.html', context)
+
+
+def change_password(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('change_password')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'accounts/change_password.html', {
+        'form': form
+    })

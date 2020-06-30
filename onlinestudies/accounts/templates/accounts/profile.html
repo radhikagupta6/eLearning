@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="">
+    User details
+    <h1>Name: {% if student.name %} {{student.name}}{% else %} No Name{% endif %}</h1>
+    <img src="{{student.image.url}}">
+    <div class="">Bio : {{student.about}}</div>
+    <a href="" class="btn btn-info">Edit Profile</a>
+</div>
+
+</body>
+</html>

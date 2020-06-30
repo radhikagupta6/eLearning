@@ -1,0 +1,36 @@
+
+{% extends 'includes/main.html' %}
+
+<!--extend is used for including a file having all the styles to all the files-->
+{% block body %}
+{% load static %}
+<style>
+body{
+    background-image: url({% static 'images/back.png' %});
+    height: 800px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+</style>
+<div class="container-fluid bg">
+    <div class="login-box">
+
+        <h1 class="text-center">Update Profile</h1>
+        <h3 style="color:red" class="text-center">{% if messages %}
+            <ul class="messages" style="list-style-type:none;>
+        {% for message in messages %}
+         <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}</h3>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" placeholder="Email" value="Update Profile">
+            </div>
+         </form>
+    </div>
+    {% endblock %}
