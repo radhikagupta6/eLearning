@@ -1,18 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import SignupForm
-
-from django.contrib.auth.models import User
+import django.contrib.auth.models
 from django.contrib import messages
 from .models import StudentProfile
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 # Create your views here.
-from .forms import LoginForm, StudentProfileForm
-
-
-users = {'email': 'a@gmail.com', 'pass': '1234', 'username': 'Ram'}
+from .forms import LoginForm, StudentProfileForm, SignupForm
 
 
 def login_view(request):
@@ -29,7 +24,7 @@ def login_view(request):
             login(request, user)
             return redirect('dashboard')
         else:
-            messages.add_message(request, messages.INFO, f'Your :{username} or password  Invalid !')
+            messages.add_message(request, messages.INFO, f'Your username :{username} or password  Invalid !')
 
     context = {
         "form": form,
@@ -64,7 +59,7 @@ def signup_view(request):
         password = form.cleaned_data.get('password1')
         print(username, email, password)
 
-        user = User.objects.create_user(username=username, email=email, password=password)
+        user = django.contrib.auth.models.User.objects.create_user(username=username, email=email, password=password)
         if user:
             # user.first_name="Your_First_Name"
             # user.last_name="Your_Last_Name"
@@ -95,7 +90,7 @@ def profile_edit(request):
     if not request.user.is_authenticated:
         return redirect('login')
     student = StudentProfile.objects.get(user=request.user)
-    form = StudentProfileForm(request.POST or None,  request.FILES or None, instance= student)
+    form = StudentProfileForm(request.POST or None, request.FILES or None, instance=student)
     if form.is_valid():
         form.save()
         messages.add_message(request, messages.INFO, f' Updated Successfully !')

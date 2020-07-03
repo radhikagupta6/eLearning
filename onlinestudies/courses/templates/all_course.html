@@ -1,3 +1,32 @@
-allllllllllllll
-khlkjglg
-ljjjjjjjjjjjj
+<style>
+    .wrapper_img{
+    height: 180px;
+    overflow: hidden;
+    }
+
+</style>
+{% for course in w %}
+
+
+
+            <div class="col-md-3">
+              <div class="card h-100 m-4 box-shadow ">
+                  <div class="wrapper_img" onclick="loadoneCourse({{course.id}})">
+                      <img src="{{course.image.url}}" width="100%">
+                  </div>
+
+                  <div class="card-body">
+                  <h2 class="card-text"><strong>{{course.title}}</strong></h2>
+                  <p class="card-text">{{course.desc}}</p>
+                   <div class="d-flex justify-content-between align-items-center"></div>
+                  </div>
+                    <div class="card-footer  m-2">
+                        <span class="text-primary mr-2"><strong style="color:black" >Rs.{{course.price}}</strong><strike  >Rs.1500</strike></span>
+                        <hr>
+                        <button type="button" class="btn btn-primary align-items-right">Join Course</button>
+                    </div>
+              </div>
+            </div>
+
+
+{% endfor%}

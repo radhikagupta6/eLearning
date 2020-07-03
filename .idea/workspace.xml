@@ -2,35 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbdfd96c-793f-40fd-a343-247b2809bc87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/change_password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/edit_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/migrations/0002_auto_20200630_1859.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/media/student_profile/My_Post.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/media/student_profile/Python.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/media/student_profile/Python_SpDvNsL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/media/student_profile/Python_TTTln8J.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/media/student_profile/Python_UoTDirh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/media/student_profile/Python_ok3Z3j2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/media/student_profile/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/media/student_profile/logo_4i82Qy3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestudies/media/student_profile/ques.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/templates/all_course.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/templates/one_course.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onlinestudies/courses/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onlinestudies/media/courses/CP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onlinestudies/media/courses/Python.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onlinestudies/media/courses/django.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/migrations/0002_auto_20200626_1453.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/templates/includes/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/templates/includes/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onlinestudies/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/courses/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/courses/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onlinestudies/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/home/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/home/templates/home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/manage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onlinestudies/onlinestudies/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/onlinestudies/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/onlinestudies/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/onlinestudies/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestudies/onlinestudies/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestudies/onlinestudies/wsgi.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,16 +48,18 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CRUD operations on Employees" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Django\Online studies\onlinestudies\courses" />
       <recent name="H:\Django\Online studies\onlinestudies\static\images" />
       <recent name="H:\Django\Online studies\onlinestudies\home" />
       <recent name="H:\Django\Online studies\onlinestudies\accounts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Django\Online studies\onlinestudies\courses\templates" />
       <recent name="H:\Django\Online studies\onlinestudies\home\templates" />
       <recent name="H:\Django\Online studies\onlinestudies\accounts\templates\accounts" />
     </key>
@@ -81,6 +75,55 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Online studies" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\radhika gupta\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Online studies" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\radhika gupta\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/onlinestudies/accounts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/onlinestudies/accounts/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />

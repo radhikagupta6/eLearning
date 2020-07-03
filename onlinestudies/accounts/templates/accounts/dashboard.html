@@ -2,7 +2,7 @@
 {% block body%}
 
 <nav class="navbar navbar-primary sticky-top bg-white flex-md-nowrap py-2">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><strong>Study Factor</strong></a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><strong>Online Studies</strong></a>
     <ul class="navbar-nav px-3">
         <a href="/">visit website</a>
     </ul>
@@ -27,57 +27,18 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{% url 'profile'%}">
                             <span data-feather="shopping-cart"></span>
                             Profile
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{% url 'change_password'%}">
                             <span data-feather="shopping-cart"></span>
                             Change Password
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="bar-chart-2"></span>
-                            Reports
-                        </a>
-                    </li>
 
-                </ul>
-
-                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                    <span>Recent Views</span>
-                    <a class="d-flex align-items-center text-muted" href="#">
-                        <span data-feather="plus-circle"></span>
-                    </a>
-                </h6>
-                <ul class="nav flex-column mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
-                            Current month
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
-                            Last quarter
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
-                            Social engagement
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
-                            Year-end sale
-                        </a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -86,10 +47,6 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                 <h1 class="h2">Dashboard</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group mr-2">
-                        <button class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button class="btn btn-sm btn-outline-secondary">Export</button>
-                    </div>
                     <div class="btn-group">
                         <div >
                             <a class="btn btn-info" href="{% url 'profile'%}">Profile</a>
